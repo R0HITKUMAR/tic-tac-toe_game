@@ -43,9 +43,9 @@ Open with Live Server
 
 ## Screenshot
 
-![Loader](https://raw.githubusercontent.com/R0HITKUMAR/tic-tac-toe_game/main/files/1.png)
+![Loader]([https://raw.githubusercontent.com/R0HITKUMAR/tic-tac-toe_game/main/files/1.png](https://github.com/R0HITKUMAR/tic-tac-toe_game/blob/main/files/1.png))
 
-![Home](https://raw.githubusercontent.com/R0HITKUMAR/tic-tac-toe_game/main/files/2.png)
+![Home]([https://raw.githubusercontent.com/R0HITKUMAR/tic-tac-toe_game/main/files/2.png](https://github.com/R0HITKUMAR/tic-tac-toe_game/blob/main/files/1.png))
 
 ## Authors
 - [@R0HITKUMAR](https://github.com/R0HITKUMAR)
