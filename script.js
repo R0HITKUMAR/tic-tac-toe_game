@@ -1,3 +1,23 @@
+let timerInterval;
+Swal.fire({
+  imageUrl: "./files/intro.png",
+  imageWidth: 1000,
+  background: "transparent",
+  showConfirmButton: false,
+  timer: 700,
+  timerProgressBar: true,
+
+  didOpen: () => {
+    const b = Swal.getHtmlContainer().querySelector("b");
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft();
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  },
+});
+
 flag = 0;
 
 // Functions that check turn of the player and put accordingly value X or 0.
@@ -119,16 +139,8 @@ function f9() {
 }
 
 // Function to Reset the Game
-function f10() {
-  document.getElementById("box1").value = "";
-  document.getElementById("box2").value = "";
-  document.getElementById("box3").value = "";
-  document.getElementById("box4").value = "";
-  document.getElementById("box5").value = "";
-  document.getElementById("box6").value = "";
-  document.getElementById("box7").value = "";
-  document.getElementById("box8").value = "";
-  document.getElementById("box9").value = "";
+function reset() {
+  location.reload();
 }
 
 // Function called whenever user tab on any box
@@ -282,7 +294,7 @@ function myfun() {
       confirmButtonText: "Ok",
     }).then((result) => {
       if (result.value) {
-        f10();
+        reset();
       }
     });
 
@@ -305,6 +317,7 @@ function myfun() {
   }
 }
 
+// Result in case of Player X win
 function PlayerXWin() {
   addResults("Player X");
   Swal.fire({
@@ -313,11 +326,12 @@ function PlayerXWin() {
     confirmButtonText: "Restart",
   }).then((result) => {
     if (result.value) {
-      f10();
+      reset();
     }
   });
 }
 
+// Result in case of Player O win
 function PlayerOWin() {
   addResults("Player O");
   Swal.fire({
@@ -326,11 +340,12 @@ function PlayerOWin() {
     confirmButtonText: "Restart",
   }).then((result) => {
     if (result.value) {
-      f10();
+      reset();
     }
   });
 }
 
+// Result in case of Match Tie
 function MathcTie() {
   addResults("Match Tie");
   Swal.fire({
@@ -339,11 +354,12 @@ function MathcTie() {
     confirmButtonText: "Restart",
   }).then((result) => {
     if (result.value) {
-      f10();
+      reset();
     }
   });
 }
 
+// Function to add results to local storage
 function addResults(result) {
   const Time = new Date().toLocaleString();
   const data = {
@@ -360,6 +376,7 @@ function addResults(result) {
   localStorage.setItem("results", JSON.stringify(results));
 }
 
+// Function to view history using Modal in Bootstrap
 function viewHistory() {
   const results = JSON.parse(localStorage.getItem("results"));
   var table = document.getElementById("results");
@@ -385,6 +402,7 @@ function viewHistory() {
   document.getElementById("history").click();
 }
 
+// Function to clear history
 function clearHistory() {
   localStorage.clear();
   viewHistory();
