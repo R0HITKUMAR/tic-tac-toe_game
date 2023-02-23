@@ -2,9 +2,9 @@
 ## _Created as a task for Interview_
 
 ## Features
--- Good UI
--- Easy to play
--- Feature to store results with the help of local storage.
+- Good UI
+- Easy to play
+- Feature to store results with the help of local storage.
 
 ## 🛠 Technology Used
 
