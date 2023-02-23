@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Font Awesome Cdn -->
+    <script
+      src="https://kit.fontawesome.com/e48d166edc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tic Tac Toe - Game</title>
+
+    <!-- CSS file Included -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- JavaScript file included -->
+  </head>
+  <body>
+    <div id="Game">
+      <br />
+      <br />
+      <h1>Tic-Tac-Toe</h1>
+
+      <!-- Game Instructions -->
+      <p id="ins">
+        Game will start by just Tapping on any box.
+        <br />
+        <b>Player (X) vs Player (O)</b>
+      </p>
+
+      <input type="text" id="box1" onclick="f1();" readonly />
+      <input type="text" id="box2" onclick="f2();" readonly />
+      <input type="text" id="box3" onclick="f3();" readonly />
+      <br />
+      <br/>
+      <input type="text" id="box4" onclick="f4();" readonly />
+      <input type="text" id="box5" onclick="f5();" readonly />
+      <input type="text" id="box6" onclick="f6();" readonly />
+      <br />
+      <br/>
+      <input type="text" id="box7" onclick="f7();" readonly />
+      <input type="text" id="box8" onclick="f8();" readonly />
+      <input type="text" id="box9" onclick="f9();" readonly />
+      <br />
+      <br />
+
+      <button id="button" onclick="f10()">RESET</button>
+      <button id="button" onclick="viewHistory()">HISTORY</button>
+      <br />
+      <br />
+    </div>
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      id="history"
+      class="btn btn-primary d-none"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      History
+    </button>
+
+    <!-- Modal for History -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">
+              <b>Game History</b>
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">Timestamp</th>
+                </tr>
+              </thead>
+              <tbody id="results"></tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              onclick="clearHistory()"
+              class="btn btn-primary"
+            >
+              Clear History
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@11.3.2/dist/sweetalert2.all.min.js,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js,npm/sweetalert2@11.3.2,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      //Load image using sweetalert2
+      let timerInterval
+      Swal.fire({
+        imageUrl:
+          'https://files.realpython.com/media/Build-an-AI-Game-Engine-for-Tic-Tac-Toe-in-Python_Watermarked.b90cdf84c417.jpg',
+        imageWidth: 1000,
+        background: 'transparent',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+
+        didOpen: () => {
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        },
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+#Game {
+  text-align: center;
+}
+h1 {
+  color: #243a6f;
+  font-size: 40px;
+  font-weight: 700;
+}
+#ins b {
+  color: black;
+  font-size: 15px;
+}
+#box1,
+#box2,
+#box3,
+#box4,
+#box5,
+#box6,
+#box7,
+#box8,
+#box9 {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  margin: 0px 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+#button {
+  box-sizing: border-box;
+  border: none;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #243a6f;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+p i,
+a {
+  color: #e53637;
+  text-decoration: none;
+}
+
+input {
+  cursor: pointer !important;
+}
